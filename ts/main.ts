@@ -1,12 +1,13 @@
 /// <reference path="../typings/tsd.d.ts"/>
-var electron: GitHubElectron.Electron = require('electron');
-var app: GitHubElectron.App           = electron.app;
-//TODO: typing this
-var BrowserWindow                     = electron.BrowserWindow;
+import * as path from 'path';
+
+const electron: GitHubElectron.Electron = require('electron');
+const app: GitHubElectron.App           = electron.app;
+const BrowserWindow                     = electron.BrowserWindow;  //TODO: typing this
 
 require('crash-reporter').start({
 	companyName: 'aiya000',
-	submitURL:   'https://github.com/aiya000/workspace'
+	submitURL:   'https://github.com/aiya000/Eleculator'
 });
 
 app.on('window-all-closed', () => {
@@ -16,8 +17,8 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', () => {
-	var mainWindow = new BrowserWindow({width: 800, height: 600});
-	mainWindow.loadURL('file://' + __dirname + '/../../index.html');
+	let mainWindow = new BrowserWindow({width: 800, height: 600});
+	mainWindow.loadURL('file://' + path.resolve(__dirname, '..', '..', 'index.html'));
 	mainWindow.webContents.openDevTools();
 	mainWindow.on('closed', () => mainWindow = null);
 });

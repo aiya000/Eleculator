@@ -6,7 +6,9 @@ module.exports = function (grunt) {
 				src: ['ts/**/*.ts'],
 				dest: 'js',
 				options: {
-					keepDirectoryHierarchy: true
+					module: 'commonjs',
+					keepDirectoryHierarchy: true,
+					sourceMap: true
 				}
 			}
 		}
