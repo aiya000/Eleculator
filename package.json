@@ -1,0 +1,27 @@
+{
+  "name": "Eleculator",
+  "version": "0.0.1",
+  "description": "This is an my example for Electron App.",
+  "main": "js/ts/main.js",
+  "scripts": {
+    "build": "node cmd/build.js",
+    "start": "node_modules/.bin/electron .",
+    "clean": "rm -rf node_modules typings js"
+  },
+  "keywords": [
+    "Electron"
+  ],
+  "author": "aiya000",
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "^1.4.8",
+    "electron-packager": "^5.2.0",
+    "electron-prebuilt": "^0.36.2",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-typescript": "^0.8.0"
+  },
+  "dependencies": {
+    "tsc": "^1.20150623.0"
+  }
+}
