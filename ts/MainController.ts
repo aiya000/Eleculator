@@ -5,7 +5,7 @@
  * index.htmlをViewとするMVCのうちControllerを担います。
  * @class MainController
  */
-class MainController {
+export class MainController {
 	/* --- --- --- private field --- --- --- */
 	/**
 	 * 計算結果を格納するテキストエリアの文字列を格納します。

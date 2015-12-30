@@ -1,5 +1,5 @@
 /// <reference path="../typings/angularjs/angular.d.ts"/>
-/// <reference path="MainController.ts"/>
+import MainController = require('./MainController');
 
 angular
 	.module('eleculator', [])
