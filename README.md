@@ -17,6 +17,17 @@ $ npm run start
 
 You need not run 'grunt' :)
 
+## How to generate document
+
+If you have yuidocjs.
+
+```
+$ grunt
+$ npm run doc
+```
+
+You can see ./doc/index.html .
+
 ## Used libraries
 
 This project use
@@ -25,6 +36,7 @@ This project use
   - electron-packager
   - electron-prebuilt
   - angular
+  - yuidocjs
 
 + grunt packages
   - grunt

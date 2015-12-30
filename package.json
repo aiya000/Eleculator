@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node cmd/build.js",
     "start": "node_modules/.bin/electron .",
-    "clean": "rm -rf node_modules typings js"
+    "clean": "rm -rf node_modules typings js",
+    "doc":   "yuidoc ./js/ts -o ./doc"
   },
   "keywords": [
     "Electron"
