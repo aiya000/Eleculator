@@ -3,11 +3,8 @@
     height: 60px;
 }
 
-.text_field {
-    background-color: white;
-}
-
 .number_field {
     background-color: white;
     text-align: right;
+    width: 240px;
 }
