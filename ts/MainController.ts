@@ -74,6 +74,15 @@ class MainController {
 
 	/**
 	 * TODO: 書く
+	 * @event clearClicked
+	 */
+	public clearClicked() {
+		this.resultText  = '0';
+		this.currentText = ''
+	}
+
+	/**
+	 * TODO: 書く
 	 * @event backspaceClicked
 	 */
 	public backspaceClicked() {
