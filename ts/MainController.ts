@@ -27,7 +27,7 @@ class MainController {
 	/**
 	 * @constructor
 	 */
-	constructor() {
+	public constructor() {
 		this.resultText  = '0';
 		this.currentText = '';
 	}
@@ -38,7 +38,48 @@ class MainController {
 	 * @event numberClicked
 	 * @param numAsChar {String} [0-9]の数値を表す文字
 	 */
-	numberClicked(numAsChar: string) {
+	public numberClicked(numAsChar: string) {
 		this.currentText = this.currentText + numAsChar;
+	}
+
+	/**
+	 * TODO: 書く
+	 * @event operatorClicked
+	 * @param operator {String} +, -, *, / いずれかの演算子
+	 */
+	public operatorClicked(operator: string) {
+		let resultNum:  number = Number(this.resultText);
+		let currentNum: number = Number(this.currentText);  // (n => n), ('' => 0)
+		switch (operator) {
+		case '+':
+			this.resultText  = String(resultNum + currentNum);
+			break;
+		case '-':
+			this.resultText  = String(resultNum - currentNum);
+			break;
+		case '*':
+			this.resultText  = String(resultNum * currentNum);
+			break;
+		case '/':
+			if (currentNum === 0) {
+				return;
+			}
+			this.resultText  = String(resultNum / currentNum);
+			break;
+		default:
+			throw new Error('operatorClicked functionにありえない引数 ("' + operator + '") が指定されました');
+		}
+		this.currentText = '';
+	}
+
+	/**
+	 * TODO: 書く
+	 * @event backspaceClicked
+	 */
+	public backspaceClicked() {
+		if (this.currentText.length === 0) {
+			return;
+		}
+		this.currentText = this.currentText.substring(1, this.currentText.length);
 	}
 }
