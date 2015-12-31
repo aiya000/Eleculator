@@ -4,8 +4,8 @@
   "description": "This is an my example for Electron App.",
   "main": "js/ts/main.js",
   "scripts": {
-    "build": "node cmd/build.js",
-    "start": "node_modules/.bin/electron .",
+    "build": "npm install && tsd install && ./node_modules/grunt-cli/bin/grunt && echo 'succeed building !'",
+    "start": "./node_modules/.bin/electron .",
     "clean": "rm -rf node_modules typings js",
     "doc": "yuidoc ./js/ts -o ./doc",
     "test": "mocha ./test"
