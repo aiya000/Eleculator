@@ -1,6 +1,6 @@
 var should         = require('should');
 var MainController = require('../js/ts/MainController');
-var controller     = new MainController.MainController();
+var controller     = new MainController();
 
 describe('number clicked', function () {
 	afterEach(function () {

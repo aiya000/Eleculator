@@ -5,7 +5,7 @@
  * index.htmlをViewとするMVCのうちControllerを担います。
  * @class MainController
  */
-export class MainController {
+class MainController {
 	/* --- --- --- private field --- --- --- */
 	/**
 	 * 計算結果を格納するテキストエリアの文字列を格納します。
@@ -92,3 +92,5 @@ export class MainController {
 		this.currentText = this.currentText.substring(1, this.currentText.length);
 	}
 }
+
+export = MainController;
