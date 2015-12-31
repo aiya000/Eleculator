@@ -2,9 +2,19 @@ var should         = require('should');
 var MainController = require('../js/ts/MainController');
 var controller     = new MainController();
 
+describe('clear button', function () {
+	it('should reset value of resultText and currentText', function () {
+		controller.resultText  = '644';
+		controller.currentText = '777';
+		controller.clearClicked();
+		controller.resultText.should.equal('0');
+		controller.currentText.should.equal('');
+	});
+});
+
 describe('number clicked', function () {
 	afterEach(function () {
-		controller.currentText = '';
+		controller.clearClicked();
 	});
 	it('1 button set number to textfield', function () {
 		controller.numberClicked('1');
@@ -51,5 +61,61 @@ describe('number clicked', function () {
 		controller.numberClicked('2');
 		controller.numberClicked('3');
 		controller.currentText.should.equal('123');
+	});
+});
+
+function inputOperatorWith123(operator) {
+	controller.numberClicked('1');
+	controller.numberClicked('2');
+	controller.numberClicked('3');
+	controller.operatorClicked(operator)
+}
+describe('operator button', function () {
+	afterEach(function () {
+		controller.clearClicked();
+	});
+	it('+ button calc result num', function () {
+		var phase1 = 0 + 123;
+		var phase2 = phase1 + 123;
+		// phase (0 + 123)
+		inputOperatorWith123('+');
+		controller.resultText.should.equal(String(phase1));
+		// phase (123 + 123)
+		inputOperatorWith123('+');
+		controller.resultText.should.equal(String(phase2));
+	});
+	it('- button calc result num', function () {
+		var phase1 = 0 - 123;
+		var phase2 = phase1 - 123;
+		// phase (0 - 123)
+		inputOperatorWith123('-');
+		controller.resultText.should.equal(String(phase1));
+		// phase (123 - 123)
+		inputOperatorWith123('-');
+		controller.resultText.should.equal(String(phase2));
+	});
+	it('* button calc result num', function () {
+		var phase1 = 1 * 123;
+		var phase2 = phase1 * 123;
+		// phase (1 * 123)
+		controller.numberClicked('1');
+		controller.operatorClicked('+');
+		inputOperatorWith123('*');
+		controller.resultText.should.equal(String(phase1));
+		// phase (123 * 123)
+		inputOperatorWith123('*');
+		controller.resultText.should.equal(String(phase2));
+	});
+	it('/ button calc result num', function () {
+		var phase1 = 1 / 123;
+		var phase2 = phase1 / 123;
+		// phase (1 / 123)
+		controller.numberClicked('1');
+		controller.operatorClicked('+');
+		inputOperatorWith123('/');
+		controller.resultText.should.equal(String(phase1));
+		// phase (123 / 123)
+		inputOperatorWith123('/');
+		controller.resultText.should.equal(String(phase2));
 	});
 });
