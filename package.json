@@ -4,11 +4,11 @@
   "description": "This is an my example for Electron App.",
   "main": "js/ts/main.js",
   "scripts": {
-    "build": "npm install && tsd install && ./node_modules/grunt-cli/bin/grunt && echo 'succeed building !'",
+    "build": "npm install && ./node_modules/.bin/tsd install && ./node_modules/grunt-cli/bin/grunt && echo 'succeed building !'",
     "start": "./node_modules/.bin/electron .",
     "clean": "rm -rf node_modules typings js",
-    "doc": "yuidoc ./js/ts -o ./doc",
-    "test": "mocha ./test"
+    "doc": "./node_modules/.bin/yuidoc ./js/ts -o ./doc",
+    "test": "./node_modules/.bin/mocha ./test"
   },
   "keywords": [
     "Electron"
@@ -24,6 +24,7 @@
     "grunt-typescript": "^0.8.0",
     "mocha": "^2.3.4",
     "should": "^8.0.2",
+    "tsd": "^0.6.5",
     "yuidocjs": "^0.9.0"
   },
   "dependencies": {

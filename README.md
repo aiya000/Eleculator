@@ -6,7 +6,6 @@ This is an __my__ example for Electron App.
 ## Require
 
 - npm
-- tsd
 
 ## How to run
 
@@ -33,10 +32,16 @@ You can see ./doc/index.html .
 This project use
 
 + npm packages
-  - electron-packager
-  - electron-prebuilt
-  - angular
-  - yuidocjs
+  + Electron
+    - electron-packager
+    - electron-prebuilt
+  + FrameWork
+    - angular
+  + Document
+    - yuidocjs
+  + Test
+    - mocha
+    - should
 
 + grunt packages
   - grunt
