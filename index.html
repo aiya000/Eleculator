@@ -9,31 +9,31 @@
         <table>
             <tr>
                 <td colspan="4">
-                    <input type="text" class="number_field" readonly ng-model="ctrl.resultText"/>
+                    <a class="number_field">{{ctrl.resultText | number}}</a>
                 </td>
             </tr>
             <tr>
                 <td colspan="4">
-                    <input type="text" class="number_field" readonly ng-model="ctrl.currentText"/>
+                    <a class="number_field">{{ctrl.currentText | number}}</a>
                 </td>
             </tr>
             <tr>
-                <td><input value="1" type="button" class="calc_button" ng-click="ctrl.numberClicked('1')"/></td>
-                <td><input value="2" type="button" class="calc_button" ng-click="ctrl.numberClicked('2')"/></td>
-                <td><input value="3" type="button" class="calc_button" ng-click="ctrl.numberClicked('3')"/></td>
-                <td><input value="+" type="button" class="calc_button" ng-click="ctrl.operatorClicked('+')"/></td>
+                <td><input value="1"  type="button" class="calc_button" ng-click="ctrl.numberClicked('1')"/></td>
+                <td><input value="2"  type="button" class="calc_button" ng-click="ctrl.numberClicked('2')"/></td>
+                <td><input value="3"  type="button" class="calc_button" ng-click="ctrl.numberClicked('3')"/></td>
+                <td><input value="+"  type="button" class="calc_button" ng-click="ctrl.operatorClicked('+')"/></td>
             </tr>
             <tr>
-                <td><input value="4" type="button" class="calc_button" ng-click="ctrl.numberClicked('4')"/></td>
-                <td><input value="5" type="button" class="calc_button" ng-click="ctrl.numberClicked('5')"/></td>
-                <td><input value="6" type="button" class="calc_button" ng-click="ctrl.numberClicked('6')"/></td>
-                <td><input value="-" type="button" class="calc_button" ng-click="ctrl.operatorClicked('-')"/></td>
+                <td><input value="4"  type="button" class="calc_button" ng-click="ctrl.numberClicked('4')"/></td>
+                <td><input value="5"  type="button" class="calc_button" ng-click="ctrl.numberClicked('5')"/></td>
+                <td><input value="6"  type="button" class="calc_button" ng-click="ctrl.numberClicked('6')"/></td>
+                <td><input value="-"  type="button" class="calc_button" ng-click="ctrl.operatorClicked('-')"/></td>
             </tr>
             <tr>
-                <td><input value="7" type="button" class="calc_button" ng-click="ctrl.numberClicked('7')"/></td>
-                <td><input value="8" type="button" class="calc_button" ng-click="ctrl.numberClicked('8')"/></td>
-                <td><input value="9" type="button" class="calc_button" ng-click="ctrl.numberClicked('9')"/></td>
-                <td><input value="*" type="button" class="calc_button" ng-click="ctrl.operatorClicked('*')"/></td>
+                <td><input value="7"  type="button" class="calc_button" ng-click="ctrl.numberClicked('7')"/></td>
+                <td><input value="8"  type="button" class="calc_button" ng-click="ctrl.numberClicked('8')"/></td>
+                <td><input value="9"  type="button" class="calc_button" ng-click="ctrl.numberClicked('9')"/></td>
+                <td><input value="*"  type="button" class="calc_button" ng-click="ctrl.operatorClicked('*')"/></td>
             </tr>
             <tr>
                 <td><input value="C"  type="button" class="calc_button" ng-click="ctrl.clearClicked()"/></td>
