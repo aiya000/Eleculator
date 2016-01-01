@@ -119,3 +119,16 @@ describe('operator button', function () {
 		controller.resultText.should.equal(String(phase2));
 	});
 });
+
+describe('backspace button', function () {
+	it('should delete one char', function () {
+		controller.numberClicked('1');
+		controller.numberClicked('1');
+		controller.backspaceClicked();
+		controller.currentText.should.equal('1');
+	});
+	it('should not throw the error on textfield is empty', function () {
+		controller.backspaceClicked();
+		controller.currentText.should.equal('');
+	});
+});
