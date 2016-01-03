@@ -91,6 +91,18 @@ class MainController {
 		}
 		this.currentText = this.currentText.substring(1, this.currentText.length);
 	}
+
+	/**
+	 * TODO: 書く
+	 * @event dotClicked
+	 */
+	public dotClicked() {
+		// 既に小数点が打たれていれば
+		if (this.currentText.indexOf('.') != -1) {
+			return;
+		}
+		this.currentText += '.'
+	}
 }
 
 export = MainController;
